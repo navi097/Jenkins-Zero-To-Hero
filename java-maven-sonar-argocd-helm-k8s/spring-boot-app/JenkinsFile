@@ -25,7 +25,7 @@ pipeline {
       steps{
           withSonarQubeEnv('sonar-server'){
               dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app'){
-               sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && $SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=Project1\
+               sh '''cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && $SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=Project1\
                -Dsonar.projectKey=Project1'''
                     }
                  }
