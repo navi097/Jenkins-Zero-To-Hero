@@ -5,7 +5,7 @@ pipeline {
      jdk 'jdk11'
     }
    environment{
-        SONAR_HOME = 'sonar-scanner'
+        SONAR_HOME = 'sscanner'
      }
   stages {
     stage('Checkout') {
