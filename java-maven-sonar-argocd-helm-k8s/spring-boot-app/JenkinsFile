@@ -1,7 +1,7 @@
 pipeline {
    agent any
    tools {
-     maven 'mvn1'
+     maven 'mvn'
      jdk 'jdk11'
     }
    environment{
@@ -24,7 +24,7 @@ pipeline {
     stage('static code analysis') {
       steps{
             withSonarQubeEnv('sonar-server'){
-               sh '''${SONAR_HOME}/bin/sscanner -Dsonar.projectName=Project1\
+               sh '''${SONAR_HOME}/bin/mvn sonar:sonar -Dsonar.projectName=Project1\
                -Dsonar.projectKey=Project1'''
                  }
               }
