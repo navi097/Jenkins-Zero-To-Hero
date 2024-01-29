@@ -34,7 +34,7 @@ pipeline {
             script{
                withDockerRegistry(credentialsId: 'docker-token', toolName: 'docker1') {
                    echo "Current working directory: ${PWD}"
-                   sh 'cd ava-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t spring-app-image:latest .'
+                   sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t spring-app-image:latest .'
                    sh 'docker push naveen055/my_first_repo:latest'
                      }
                   }
